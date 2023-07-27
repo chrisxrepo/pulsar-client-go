@@ -17,10 +17,6 @@
 
 package compression
 
-import (
-	"bytes"
-)
-
 type noopProvider struct{}
 
 // NewNoopProvider returns a Provider interface that does not compress the data
