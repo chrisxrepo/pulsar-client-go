@@ -53,7 +53,7 @@ func (noopProvider) Decompress(dst, src []byte, originalSize int) ([]byte, error
 	b.Write(src)
 	return dst[:len(src)], nil
  */
-	return src
+	return src, nil
 }
 
 func (noopProvider) Close() error {
