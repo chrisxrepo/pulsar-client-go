@@ -33,23 +33,27 @@ func (noopProvider) CompressMaxSize(originalSize int) int {
 }
 
 func (noopProvider) Compress(dst, src []byte) []byte {
-	if dst == nil {
+/*	if dst == nil {
 		dst = make([]byte, len(src))
 	}
 
 	b := bytes.NewBuffer(dst[:0])
 	b.Write(src)
 	return dst[:len(src)]
+ */
+	return src
 }
 
 func (noopProvider) Decompress(dst, src []byte, originalSize int) ([]byte, error) {
-	if dst == nil {
+/*	if dst == nil {
 		dst = make([]byte, len(src))
 	}
 
 	b := bytes.NewBuffer(dst[:0])
 	b.Write(src)
 	return dst[:len(src)], nil
+ */
+	return src
 }
 
 func (noopProvider) Close() error {
