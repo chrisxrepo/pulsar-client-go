@@ -241,6 +241,9 @@ func (t *timedAckGroupingTracker) clearPendingAcks() map[[2]uint64]*bitset.BitSe
 }
 
 func (t *timedAckGroupingTracker) close() {
+	if t.ticker != nil {
+		t.ticker.Stop()
+	}
 	t.flushAndClean()
 	if t.exitCh != nil {
 		close(t.exitCh)
